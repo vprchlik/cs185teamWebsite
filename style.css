@@ -10,19 +10,19 @@
 }
 
 :root {
-  --color-bg: #fafafa;
-  --color-bg-alt: #f0f4f8;
-  --color-surface: #ffffff;
-  --color-primary: #4f46e5;
-  --color-primary-light: #818cf8;
-  --color-primary-dark: #3730a3;
-  --color-accent: #06b6d4;
-  --color-text: #1e293b;
-  --color-text-light: #64748b;
-  --color-text-lighter: #94a3b8;
-  --color-border: #e2e8f0;
-  --color-gradient-start: #4f46e5;
-  --color-gradient-end: #06b6d4;
+  --color-bg: #f5ecdb;
+  --color-bg-alt: #efe2cc;
+  --color-surface: #fffaf0;
+  --color-primary: #bd7f27;
+  --color-primary-light: #d49d4f;
+  --color-primary-dark: #9a651b;
+  --color-accent: #4f6e5f;
+  --color-text: #1f1a17;
+  --color-text-light: #4c443b;
+  --color-text-lighter: #6d6358;
+  --color-border: #d6c2a3;
+  --color-gradient-start: #b0711f;
+  --color-gradient-end: #d2a153;
   --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
   --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -2px rgba(0,0,0,0.05);
   --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.08), 0 4px 6px -4px rgba(0,0,0,0.04);
@@ -31,7 +31,8 @@
   --radius-md: 12px;
   --radius-lg: 16px;
   --radius-xl: 24px;
-  --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font: 'Lora', Georgia, serif;
+  --font-display: 'Cormorant Garamond', Georgia, serif;
   --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -72,7 +73,7 @@ a {
   left: 0;
   right: 0;
   z-index: 1000;
-  background: rgba(255,255,255,0.8);
+  background: rgba(245,236,219,0.92);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid transparent;
@@ -80,7 +81,7 @@ a {
 }
 
 .navbar.scrolled {
-  background: rgba(255,255,255,0.95);
+  background: rgba(245,236,219,0.98);
   border-bottom-color: var(--color-border);
   box-shadow: var(--shadow-sm);
 }
@@ -96,16 +97,23 @@ a {
 }
 
 .nav-logo {
-  font-size: 1.25rem;
+  font-size: 2rem;
   font-weight: 700;
+  font-family: var(--font-display);
   color: var(--color-text);
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 10px;
 }
 
-.logo-icon {
-  font-size: 1.3rem;
+.logo-accent {
+  color: var(--color-primary);
+}
+
+.logo-mark {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
 }
 
 .nav-links {
@@ -115,7 +123,7 @@ a {
 }
 
 .nav-links a {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   font-weight: 500;
   color: var(--color-text-light);
   transition: color var(--transition);
@@ -187,9 +195,9 @@ a {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse at 20% 50%, rgba(79, 70, 229, 0.08) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 20%, rgba(6, 182, 212, 0.06) 0%, transparent 50%),
-    radial-gradient(ellipse at 50% 80%, rgba(79, 70, 229, 0.04) 0%, transparent 50%);
+    radial-gradient(ellipse at 20% 50%, rgba(189, 127, 39, 0.12) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(79, 110, 95, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 80%, rgba(189, 127, 39, 0.06) 0%, transparent 50%);
   z-index: 0;
 }
 
@@ -203,7 +211,7 @@ a {
 .hero-badge {
   display: inline-block;
   padding: 6px 16px;
-  background: rgba(79, 70, 229, 0.08);
+  background: rgba(189, 127, 39, 0.12);
   color: var(--color-primary);
   font-size: 0.8rem;
   font-weight: 600;
@@ -215,6 +223,7 @@ a {
 .hero-title {
   font-size: clamp(3rem, 8vw, 5rem);
   font-weight: 800;
+  font-family: var(--font-display);
   line-height: 1.1;
   letter-spacing: -0.03em;
   margin-bottom: 16px;
@@ -228,7 +237,7 @@ a {
 }
 
 .hero-tagline {
-  font-size: 1.25rem;
+  font-size: 1.35rem;
   font-weight: 500;
   color: var(--color-text-light);
   margin-bottom: 20px;
@@ -264,12 +273,12 @@ a {
 .btn-primary {
   background: var(--color-primary);
   color: #fff;
-  box-shadow: 0 2px 8px rgba(79, 70, 229, 0.3);
+  box-shadow: 0 2px 8px rgba(189, 127, 39, 0.35);
 }
 
 .btn-primary:hover {
   background: var(--color-primary-dark);
-  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.4);
+  box-shadow: 0 4px 12px rgba(189, 127, 39, 0.45);
   transform: translateY(-1px);
 }
 
@@ -296,8 +305,9 @@ a {
 }
 
 .section-title {
-  font-size: 2rem;
+  font-size: 2.4rem;
   font-weight: 700;
+  font-family: var(--font-display);
   text-align: center;
   margin-bottom: 12px;
   letter-spacing: -0.02em;
@@ -308,7 +318,7 @@ a {
   color: var(--color-text-light);
   font-size: 1.05rem;
   margin-bottom: 48px;
-  max-width: 560px;
+  max-width: 640px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -324,7 +334,7 @@ a {
 .about-card {
   background: var(--color-surface);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-md);
   padding: 32px 28px;
   transition: var(--transition);
   opacity: 0;
@@ -348,8 +358,9 @@ a {
 }
 
 .about-card h3 {
-  font-size: 1.15rem;
+  font-size: 1.5rem;
   font-weight: 700;
+  font-family: var(--font-display);
   margin-bottom: 12px;
 }
 
@@ -368,10 +379,26 @@ a {
   margin-top: 48px;
 }
 
+.team-photo-wrap {
+  max-width: 320px;
+  margin: 32px auto 0;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  background: var(--color-surface);
+  box-shadow: var(--shadow-lg);
+}
+
+.team-photo {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 .team-card {
   background: var(--color-surface);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-md);
   padding: 40px 48px;
   text-align: center;
   transition: var(--transition);
@@ -393,7 +420,7 @@ a {
 .team-avatar {
   width: 72px;
   height: 72px;
-  border-radius: 50%;
+  border-radius: 16px;
   background: linear-gradient(135deg, var(--color-gradient-start), var(--color-gradient-end));
   color: #fff;
   font-size: 1.4rem;
@@ -405,8 +432,9 @@ a {
 }
 
 .team-card h3 {
-  font-size: 1.15rem;
+  font-size: 1.5rem;
   font-weight: 700;
+  font-family: var(--font-display);
   margin-bottom: 4px;
 }
 
@@ -433,7 +461,7 @@ a {
 .deliverable-card {
   background: var(--color-surface);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-md);
   padding: 28px;
   transition: var(--transition);
   position: relative;
@@ -479,11 +507,11 @@ a {
 .deliverable-number {
   display: inline-block;
   padding: 4px 12px;
-  background: rgba(79, 70, 229, 0.08);
+  background: rgba(189, 127, 39, 0.12);
   color: var(--color-primary);
   font-size: 0.8rem;
   font-weight: 700;
-  border-radius: 6px;
+  border-radius: 4px;
   margin-bottom: 12px;
   letter-spacing: 0.02em;
 }
@@ -494,8 +522,9 @@ a {
 }
 
 .deliverable-card h3 {
-  font-size: 1.05rem;
+  font-size: 1.35rem;
   font-weight: 700;
+  font-family: var(--font-display);
   margin-bottom: 8px;
   line-height: 1.4;
 }
@@ -528,9 +557,15 @@ a {
 }
 
 .deliverable-link:hover {
-  background: rgba(79, 70, 229, 0.06);
+  background: rgba(189, 127, 39, 0.1);
   border-color: var(--color-primary-light);
   color: var(--color-primary);
+}
+
+.deliverable-link-disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
 }
 
 .link-icon {
@@ -565,10 +600,17 @@ a {
   flex-wrap: wrap;
 }
 
+.video-note {
+  text-align: center;
+  color: var(--color-text-light);
+  margin: 8px 0 24px;
+  font-size: 0.95rem;
+}
+
 /* --- Footer --- */
 .footer {
-  background: var(--color-text);
-  color: rgba(255,255,255,0.7);
+  background: #1e1a17;
+  color: rgba(255,250,240,0.74);
   padding: 48px 0;
   text-align: center;
 }
@@ -581,12 +623,18 @@ a {
 }
 
 .footer-logo {
-  font-size: 1.15rem;
+  font-size: 2rem;
   font-weight: 700;
+  font-family: var(--font-display);
   color: #fff;
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 10px;
+}
+
+.footer-logo-mark {
+  width: 34px;
+  height: 34px;
 }
 
 .footer p {
@@ -600,6 +648,15 @@ a {
 
 /* --- Responsive --- */
 @media (max-width: 768px) {
+  .nav-logo {
+    font-size: 1.7rem;
+  }
+
+  .logo-mark {
+    width: 32px;
+    height: 32px;
+  }
+
   .nav-toggle {
     display: flex;
   }
@@ -660,6 +717,11 @@ a {
 
   .team-grid {
     gap: 20px;
+  }
+
+  .team-photo-wrap {
+    margin-top: 24px;
+    border-radius: var(--radius-lg);
   }
 
   .team-card {
